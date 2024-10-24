@@ -4,6 +4,11 @@
     {
         static void Main(string[] args)
         {
+            DefaultMenu();   
+        }
+
+        public static void DefaultMenu()
+        {
             Console.WriteLine("Välkommen! Fyll i ditt användarnamn:");
             string username = Console.ReadLine();
             Console.WriteLine("Fyll i ditt lösenord");
@@ -13,9 +18,11 @@
             {
                 Admin admin = new Admin();
                 admin.AdminView();
-                
+
             }
-            
         }
+
     }
+
+    
 }
