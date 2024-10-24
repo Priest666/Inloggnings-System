@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            User user = new User();
+
             Console.WriteLine("Välkommen! Fyll i ditt användarnamn:");
             string username = Console.ReadLine();
             Console.WriteLine("Fyll i ditt lösenord");
@@ -14,7 +16,7 @@
                 Admin admin = new Admin();
                 admin.AdminView();
                 
-            }
+            } else if u
             
         }
     }
