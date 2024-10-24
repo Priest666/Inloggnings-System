@@ -38,6 +38,7 @@
                 }
             }
         }
+
         public static void CreateUser()
         {
             Console.Clear();

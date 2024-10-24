@@ -13,6 +13,10 @@ namespace Inloggning
         public string Password { get; set; }
         public void UserMenu()
         {
+            System.Timers.Timer timer = new(interval: 120000);
+            timer.Elapsed += (sender, e) => HandleTimer();
+            timer.Start();
+            void HandleTimer() { timer.Stop(); Program.DefaultMenu(); }
             Console.WriteLine("Vänligen gör ett val: \n1. Avsluta \n2. Visa ditt lösenord");
             string choose = Console.ReadLine();
 
