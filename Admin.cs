@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,8 @@ namespace Inloggning
                         Program.CreateUser();
                         break;
                     case "2":
-
+                        Random randomColor = new Random();
+                        Console.ForegroundColor = (ConsoleColor)randomColor.Next(1, 16);
                         break;
                     case "3":
                         Console.WriteLine("Skriv vad du vill ändra consolefönstrets titel till");
