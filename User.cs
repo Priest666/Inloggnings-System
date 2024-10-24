@@ -26,7 +26,7 @@ namespace Inloggning
             }
             else if (choose == "2")
             {
-                Console.WriteLine($"Ditt lösenord är: ");
+                Console.WriteLine($"Ditt lösenord är: {Password}");
             }
             else
             {
