@@ -4,6 +4,16 @@
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Välkommen! Fyll i ditt användarnamn:");
+            string username = Console.ReadLine();
+            Console.WriteLine("Fyll i ditt lösenord");
+            string password = Console.ReadLine();
+
+            if (username == "admin" && password == "1234")
+            {
+                Admin admin = new Admin();
+                
+            }
             
         }
     }
