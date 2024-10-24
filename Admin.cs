@@ -9,7 +9,6 @@ namespace Inloggning
 {
     internal class Admin
     {
-        static List<User> users = new List<User>();
         public void AdminView()
        {
             System.Timers.Timer timer = new(interval: 600000);
