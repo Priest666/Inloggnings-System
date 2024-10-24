@@ -4,25 +4,29 @@
     {
         static void Main(string[] args)
         {
-            DefaultMenu();   
+            DefaultMenu();
         }
 
         public static void DefaultMenu()
         {
+            int maxLoginAttempts = 10;
             Console.WriteLine("Välkommen! Fyll i ditt användarnamn:");
             string username = Console.ReadLine();
             Console.WriteLine("Fyll i ditt lösenord");
             string password = Console.ReadLine();
-
-            if (username == "admin" && password == "1234")
+            for (int i = 0; i < maxLoginAttempts; i++)
             {
-                Admin admin = new Admin();
-                admin.AdminView();
-
+                if (username == "admin" && password == "1234")
+                {
+                    Admin admin = new Admin();
+                    admin.AdminView();
+                    break;
+                }
             }
+
         }
 
     }
 
-    
+
 }
