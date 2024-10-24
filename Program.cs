@@ -12,6 +12,7 @@
             if (username == "admin" && password == "1234")
             {
                 Admin admin = new Admin();
+                admin.AdminView();
                 
             }
             
