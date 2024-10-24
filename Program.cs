@@ -2,22 +2,56 @@
 {
     internal class Program
     {
+        static User user = new User();
+        static List<User> users = new List<User>();
+
         static void Main(string[] args)
         {
-            User user = new User();
+            DefaultMenu();
+        }
 
-            Console.WriteLine("Välkommen! Fyll i ditt användarnamn:");
+        public static void DefaultMenu()
+        {
+            int maxLoginAttempts = 10;
+            Console.WriteLine("Välkommen! Fyll i ditt användarnamn: ");
             string username = Console.ReadLine();
             Console.WriteLine("Fyll i ditt lösenord");
             string password = Console.ReadLine();
 
-            if (username == "admin" && password == "1234")
+            User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
+            for (int i = 0; i < maxLoginAttempts; i++)
             {
-                Admin admin = new Admin();
-                admin.AdminView();
-                
-            } else if u
-            
+                if (username == "admin" && password == "1234")
+                {
+                    Admin admin = new Admin();
+                    admin.AdminView();
+                    break;
+                }
+                if (foundUser != null)
+                {
+                    user.UserMenu();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("User does not exist");
+                }
+            }
         }
+        public static void CreateUser()
+        {
+            Console.Clear();
+            Console.Write("Ange användarnamn: ");
+            string userName = Console.ReadLine();
+            Console.WriteLine("Ange lösenord: ");
+            string passWord = Console.ReadLine();
+            users.Add(new User { Username = userName, Password = passWord });
+
+            Console.WriteLine($"Användare {userName} har lagts till");
+
+        }
+
     }
+
+
 }
