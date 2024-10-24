@@ -37,6 +37,7 @@
                 }
 
                 maxLoginAttempts--;
+                Console.WriteLine($"Invalid username or password, attempts left: {maxLoginAttempts}");
             }
 
             if (found == false)
