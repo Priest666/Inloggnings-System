@@ -17,7 +17,7 @@
             string username = Console.ReadLine();
             Console.WriteLine("Fyll i ditt lösenord");
             string password = Console.ReadLine();
-
+            bool found = false;
             User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
             for (int i = 0; i < maxLoginAttempts; i++)
             {
@@ -25,17 +25,19 @@
                 {
                     Admin admin = new Admin();
                     admin.AdminView();
+                    found = true;
                     break;
                 }
                 if (foundUser != null)
                 {
                     user.UserMenu();
+                    found = true;
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("User does not exist");
-                }
+            }
+            if (found == false)
+            {
+                Console.WriteLine("User does not exist");
             }
         }
         public static void CreateUser()
