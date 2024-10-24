@@ -40,6 +40,7 @@
                 Console.WriteLine("User does not exist");
             }
         }
+
         public static void CreateUser()
         {
             Console.Clear();

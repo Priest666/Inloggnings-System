@@ -9,7 +9,6 @@ namespace Inloggning
 {
     internal class Admin
     {
-        static List<User> users = new List<User>();
         public void AdminView()
        {
             System.Timers.Timer timer = new(interval: 600000);
@@ -29,7 +28,7 @@ namespace Inloggning
                 switch (input)
                 {
                     case "1":
-                        CreateUser();
+                        Program.CreateUser();
                         break;
                     case "2":
                         Random randomColor = new Random();
@@ -52,19 +51,7 @@ namespace Inloggning
             }
        }
 
-       public static void CreateUser()
-       {
-            Console.Clear();
-            Console.Write("Ange användarnamn: ");
-            string userName = Console.ReadLine();
-            Console.WriteLine("Ange lösenord: ");
-            string passWord = Console.ReadLine();
-            users.Add(new User{ Username = userName, Password = passWord });
-
-            Console.WriteLine($"Användare {userName} har lagts till");
-
-       }
-
+      
 
 
 
