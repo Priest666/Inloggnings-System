@@ -18,7 +18,7 @@
                 Console.WriteLine("Fyll i ditt lösenord");
                 string password = Console.ReadLine();
 
-                User foundUser = users.FirstOrDefault(x => x.Username == username);
+                User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
 
                 if (username == "admin" && password == "1234")
                 {
