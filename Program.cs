@@ -13,14 +13,15 @@
         public static void DefaultMenu()
         {
             int maxLoginAttempts = 10;
-            Console.WriteLine("Välkommen! Fyll i ditt användarnamn: ");
-            string username = Console.ReadLine();
-            Console.WriteLine("Fyll i ditt lösenord");
-            string password = Console.ReadLine();
             bool found = false;
-            User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
-            for (int i = 0; i < maxLoginAttempts; i++)
+            while (maxLoginAttempts > 0 && !found)
             {
+                Console.WriteLine("Välkommen! Fyll i ditt användarnamn: ");
+                string username = Console.ReadLine();
+                Console.WriteLine("Fyll i ditt lösenord");
+               string password = Console.ReadLine();
+               User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
+        
                 if (username == "admin" && password == "1234")
                 {
                     Admin admin = new Admin();
@@ -34,7 +35,10 @@
                     found = true;
                     break;
                 }
+
+                maxLoginAttempts--;
             }
+
             if (found == false)
             {
                 Console.WriteLine("User does not exist");
