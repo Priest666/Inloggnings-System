@@ -8,8 +8,9 @@ namespace Inloggning
 {
     internal class Admin
     {
-      
-       public void AdminView()
+        List<User> users = new List<User>();
+
+        public void AdminView()
        {
             Console.WriteLine("Gör ett val.\n");
             Console.WriteLine("1. Skapa användare");
@@ -44,6 +45,20 @@ namespace Inloggning
                 }
             }
        }
+
+       public void CreateUser()
+       {
+            Console.Clear();
+            Console.Write("Ange användarnamn: ");
+            string userName = Console.ReadLine();
+            Console.WriteLine("Ange lösenord: ");
+            string passWord = Console.ReadLine();
+            users.Add(new User());
+
+            
+
+       }
+
 
 
 
