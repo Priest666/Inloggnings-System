@@ -30,7 +30,7 @@ namespace Inloggning
                         break;
                     case "2":
                         Random randomColor = new Random();
-                        Console.ForegroundColor = (ConsoleColor)randomColor.Next((int)ConsoleColor.DarkBlue, (int)ConsoleColor.White);
+                        Console.ForegroundColor = (ConsoleColor)randomColor.Next(1, 16);
                         break;
                     case "3":
                         Console.WriteLine("Skriv vad du vill ändra consolefönstrets titel till");
