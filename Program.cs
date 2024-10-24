@@ -7,37 +7,36 @@
 
         static void Main(string[] args)
         {
-            DefaultMenu();   
+            DefaultMenu();
         }
 
         public static void DefaultMenu()
         {
-                       
-                Console.WriteLine("Välkommen! Fyll i ditt användarnamn: ");
-                string username = Console.ReadLine();
-                Console.WriteLine("Fyll i ditt lösenord");
-                string password = Console.ReadLine();
+            int maxLoginAttempts = 10;
+            Console.WriteLine("Välkommen! Fyll i ditt användarnamn: ");
+            string username = Console.ReadLine();
+            Console.WriteLine("Fyll i ditt lösenord");
+            string password = Console.ReadLine();
 
-                User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
-
+            User foundUser = users.FirstOrDefault(x => x.Username == username && x.Password == password);
+            for (int i = 0; i < maxLoginAttempts; i++)
+            {
                 if (username == "admin" && password == "1234")
                 {
                     Admin admin = new Admin();
                     admin.AdminView();
-                    
-
+                    break;
                 }
-
                 if (foundUser != null)
                 {
                     user.UserMenu();
+                    break;
                 }
-
                 else
                 {
                     Console.WriteLine("User does not exist");
                 }
-           
+            }
         }
         public static void CreateUser()
         {
